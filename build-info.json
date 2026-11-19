@@ -1,1 +1,6 @@
-{"sourceRepository":"francesco89b/JsAdventure","sourceSha":"2821492126e14aa22f26fe458ff9f200eab0588b"}
+{
+  "sourceRepository": "francesco89b/JsAdventure",
+  "sourceSha": "e2cdaba0d90425855d4c36003ef1b435e6dc0bd0",
+  "publishMode": "direct-agent",
+  "source": "compiled-dist"
+}
