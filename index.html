@@ -1,3 +1,43 @@
-<!doctype html><html lang="it"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /><title>JsAdventure — Yellow Room vertical slice</title>  <script type="module" crossorigin src="./assets/index-DazrEmaB.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-nmLk3RmZ.css">
-</head><body><main id="app"><div id="game-shell"><div id="game"></div><section id="hud" aria-label="Interfaccia avventura"><div><strong>Stanza:</strong> <span id="room-name">—</span></div><div class="hud-message"><strong>Osservazione:</strong> <span id="message">—</span></div><div class="hud-inventory"><strong>Inventario:</strong><div id="inventory" aria-label="Inventario"><span class="inventory-empty">vuoto</span></div></div></section></div></main></body></html>
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Il mistero della camera gialla — Demo</title>
+    <script type="module" crossorigin src="./assets/index-C3mC1LUF.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Co4O_pGV.css">
+  </head>
+  <body>
+    <main id="app">
+      <section id="start-menu" class="start-menu" aria-label="Menu iniziale">
+        <div class="start-menu-content">
+          <span class="menu-eyebrow">Un'indagine di Joseph Rouletabille</span>
+          <h1>Il mistero della camera gialla</h1>
+          <p>Un frammento, una testimonianza, una stanza che nessuno avrebbe potuto lasciare.</p>
+          <div class="menu-buttons">
+            <button id="new-game" type="button">Nuova partita</button>
+            <button id="continue-game" type="button" disabled>Continua</button>
+          </div>
+          <p id="menu-feedback" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+      <div id="game-shell">
+        <div id="game"></div>
+        <section id="hud" aria-label="Interfaccia avventura">
+          <div><strong>Stanza:</strong> <span id="room-name">—</span></div>
+          <div class="hud-message"><strong>Osservazione:</strong> <span id="message">—</span></div>
+          <div class="hud-inventory">
+            <strong>Inventario:</strong>
+            <div id="inventory" aria-label="Inventario"><span class="inventory-empty">vuoto</span></div>
+          </div>
+        </section>
+        <nav id="session-actions" aria-label="Partita">
+          <button id="show-hotspots" type="button" aria-pressed="false">Mostra interazioni</button>
+          <button id="save-game" type="button">Salva partita</button>
+          <button id="return-menu" type="button">Torna al menu</button>
+          <span id="game-feedback" role="status" aria-live="polite"></span>
+        </nav>
+      </div>
+    </main>
+  </body>
+</html>
