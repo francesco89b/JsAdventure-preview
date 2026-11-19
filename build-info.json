@@ -1,6 +1,6 @@
 {
   "sourceRepository": "francesco89b/JsAdventure",
   "sourceSha": "dc86aa5840112273a81c5bce1c6e574b238c961c",
-  "publishMode": "direct-agent",
+  "publishMode": "github-plugin",
   "source": "compiled-dist"
 }
