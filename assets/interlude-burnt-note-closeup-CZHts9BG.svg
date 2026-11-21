@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1024" viewBox="0 0 2048 1024">
+  <defs>
+    <radialGradient id="lamp" cx="0.5" cy="0.45" r="0.7">
+      <stop offset="0" stop-color="#3a2a18"/>
+      <stop offset="1" stop-color="#0d0905"/>
+    </radialGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9dcbc"/>
+      <stop offset="1" stop-color="#cdb98f"/>
+    </linearGradient>
+  </defs>
+  <rect width="2048" height="1024" fill="url(#lamp)"/>
+  <!-- The burnt fragment, scorched edges -->
+  <path d="M560 210 L1380 170 L1470 260 L1440 420 L1500 560 L1420 760 L1180 840 L900 800 L640 850 L520 700 L560 520 L490 360 Z" fill="#2b1c10"/>
+  <path d="M590 240 L1360 205 L1430 280 L1405 430 L1460 560 L1390 735 L1170 805 L905 768 L655 812 L555 690 L592 515 L527 365 Z" fill="url(#paper)"/>
+  <!-- Faded handwriting -->
+  <g stroke="#6b5434" stroke-width="7" stroke-linecap="round" opacity="0.55" fill="none">
+    <path d="M680 330 q60 -20 120 0 t120 0 t120 0 t140 6"/>
+    <path d="M660 400 q70 -18 140 0 t140 0 t160 4"/>
+    <path d="M690 470 q50 -16 100 0 t100 0 t100 0"/>
+  </g>
+  <!-- The watermark of a Paris stationer, seen against the light -->
+  <g opacity="0.32" fill="none" stroke="#fff6dc" stroke-width="10">
+    <ellipse cx="1000" cy="610" rx="170" ry="110"/>
+    <path d="M900 640 L960 560 L1000 610 L1040 560 L1100 640"/>
+  </g>
+  <text x="1000" y="760" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#fff6dc" opacity="0.35">PAPETERIE · PARIS</text>
+  <!-- Lens rim -->
+  <circle cx="1000" cy="620" r="300" fill="none" stroke="#b08a4a" stroke-width="22" opacity="0.8"/>
+</svg>

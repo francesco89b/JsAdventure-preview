@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1024" viewBox="0 0 2048 1024">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1424"/>
+      <stop offset="0.6" stop-color="#1d2a3f"/>
+      <stop offset="1" stop-color="#2e3647"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6f0d8"/>
+      <stop offset="0.7" stop-color="#e6dcb8"/>
+      <stop offset="1" stop-color="#e6dcb8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd27a" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ffd27a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2048" height="1024" fill="url(#sky)"/>
+  <circle cx="1560" cy="220" r="130" fill="url(#moon)"/>
+  <g fill="#cfd6e6" opacity="0.7">
+    <circle cx="210" cy="120" r="2"/><circle cx="420" cy="80" r="1.5"/><circle cx="640" cy="160" r="2"/>
+    <circle cx="880" cy="70" r="1.5"/><circle cx="1110" cy="140" r="2"/><circle cx="1290" cy="60" r="1.5"/>
+    <circle cx="1820" cy="110" r="2"/><circle cx="1950" cy="190" r="1.5"/><circle cx="760" cy="250" r="1.5"/>
+  </g>
+  <!-- Forest line of the Glandier estate -->
+  <path d="M0 700 Q120 600 220 680 T460 660 T720 690 T980 650 T1240 690 T1500 655 T1760 690 T2048 660 V1024 H0 Z" fill="#101a1c"/>
+  <!-- Château silhouette -->
+  <g fill="#0a1012">
+    <rect x="300" y="470" width="520" height="260"/>
+    <polygon points="300,470 560,360 820,470"/>
+    <rect x="250" y="400" width="90" height="330"/>
+    <polygon points="250,400 295,320 340,400"/>
+    <rect x="780" y="420" width="80" height="310"/>
+    <polygon points="780,420 820,350 860,420"/>
+  </g>
+  <g fill="#3a3220">
+    <rect x="380" y="540" width="34" height="50"/><rect x="470" y="540" width="34" height="50"/>
+    <rect x="650" y="540" width="34" height="50"/><rect x="740" y="540" width="34" height="50"/>
+  </g>
+  <!-- The pavilion, its laboratory window still lit -->
+  <g fill="#0d1416">
+    <rect x="1240" y="600" width="300" height="160"/>
+    <polygon points="1220,600 1390,520 1560,600"/>
+  </g>
+  <circle cx="1330" cy="660" r="120" fill="url(#glow)"/>
+  <rect x="1305" y="635" width="50" height="60" fill="#ffd27a"/>
+  <rect x="1450" y="640" width="36" height="50" fill="#2a2a24"/>
+  <!-- Path through the park -->
+  <path d="M1390 1024 C1360 900 1420 840 1390 760" stroke="#2a3235" stroke-width="46" fill="none"/>
+</svg>

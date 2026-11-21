@@ -1,43 +1,145 @@
 <!doctype html>
-<html lang="it">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Il mistero della camera gialla — Demo</title>
-    <script type="module" crossorigin src="./assets/index-C3mC1LUF.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Co4O_pGV.css">
+    <title>JsAdventure</title>
+    <script type="module" crossorigin src="./assets/index-CVGRCfHs.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CnJZ_ym5.css">
   </head>
   <body>
     <main id="app">
-      <section id="start-menu" class="start-menu" aria-label="Menu iniziale">
+      <section id="launcher" class="start-menu launcher" data-i18n-label="shell.launcher.label" hidden>
         <div class="start-menu-content">
-          <span class="menu-eyebrow">Un'indagine di Joseph Rouletabille</span>
-          <h1>Il mistero della camera gialla</h1>
-          <p>Un frammento, una testimonianza, una stanza che nessuno avrebbe potuto lasciare.</p>
+          <span class="menu-eyebrow" data-i18n="shell.launcher.choose"></span>
+          <h1 id="launcher-title"></h1>
+          <div id="launcher-adventures" class="launcher-adventures"></div>
+        </div>
+      </section>
+
+      <section id="start-menu" class="start-menu" data-i18n-label="shell.menu.label" data-overlay>
+        <div class="start-menu-content">
+          <span id="brand-eyebrow" class="menu-eyebrow"></span>
+          <h1 id="brand-title"></h1>
+          <p id="brand-tagline"></p>
           <div class="menu-buttons">
-            <button id="new-game" type="button">Nuova partita</button>
-            <button id="continue-game" type="button" disabled>Continua</button>
+            <button id="new-game" type="button"></button>
+            <button id="continue-game" type="button" data-i18n="shell.menu.continue" disabled></button>
+            <button id="start-settings" type="button" data-i18n="shell.menu.settings"></button>
+            <button id="change-adventure" type="button" data-i18n="shell.menu.changeAdventure" hidden></button>
           </div>
           <p id="menu-feedback" role="status" aria-live="polite"></p>
         </div>
       </section>
+
       <div id="game-shell">
-        <div id="game"></div>
-        <section id="hud" aria-label="Interfaccia avventura">
-          <div><strong>Stanza:</strong> <span id="room-name">—</span></div>
-          <div class="hud-message"><strong>Osservazione:</strong> <span id="message">—</span></div>
-          <div class="hud-inventory">
-            <strong>Inventario:</strong>
-            <div id="inventory" aria-label="Inventario"><span class="inventory-empty">vuoto</span></div>
+        <div id="game">
+          <section id="interlude-caption" class="interlude-caption" hidden>
+            <div class="interlude-text" aria-live="polite">
+              <span id="interlude-speaker" class="interlude-speaker"></span>
+              <p id="interlude-body" class="interlude-body"></p>
+              <span id="interlude-continue" class="interlude-continue"></span>
+            </div>
+            <div class="interlude-actions">
+              <button id="interlude-skip" class="interlude-skip" type="button" data-i18n="shell.interlude.skip"></button>
+              <button id="interlude-menu" class="system-menu-button" type="button" data-i18n-label="shell.hud.openMenu">
+                <span class="system-menu-icon" aria-hidden="true"><i></i><i></i></span>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <section id="adventure-hud" data-i18n-label="shell.hud.label">
+          <span id="room-name" class="visually-hidden">—</span>
+          <div id="action-line" class="action-line" role="status" aria-live="polite">
+            <span id="message"></span>
+            <button id="examine-item" class="examine-item" type="button" data-i18n="shell.hud.examineItem" hidden></button>
+          </div>
+          <div id="dialogue-choices" class="dialogue-choices" role="group" hidden></div>
+          <div class="adventure-controls">
+            <div id="inventory" class="inventory-tray" data-i18n-label="shell.hud.inventory"></div>
+            <div id="action-chooser" class="action-chooser" role="group" data-dialogue-ignore hidden></div>
+            <div id="dialogue-panel" class="dialogue-panel" hidden aria-live="polite">
+              <span id="dialogue-speaker" class="dialogue-speaker"></span>
+              <span id="dialogue-body" class="dialogue-body"></span>
+              <button id="dialogue-advance" class="dialogue-advance" type="button"></button>
+            </div>
+            <button id="cutscene-skip" class="cutscene-skip" type="button" data-dialogue-ignore data-i18n="shell.interlude.skip" hidden></button>
+            <button id="open-game-menu" class="system-menu-button" type="button" data-dialogue-ignore data-i18n-label="shell.hud.openMenu">
+              <span class="system-menu-icon" aria-hidden="true"><i></i><i></i></span>
+            </button>
           </div>
         </section>
-        <nav id="session-actions" aria-label="Partita">
-          <button id="show-hotspots" type="button" aria-pressed="false">Mostra interazioni</button>
-          <button id="save-game" type="button">Salva partita</button>
-          <button id="return-menu" type="button">Torna al menu</button>
-          <span id="game-feedback" role="status" aria-live="polite"></span>
-        </nav>
+
+        <section id="minigame-layer" class="minigame-layer" data-overlay hidden></section>
+
+        <section id="game-menu-panel" class="game-menu-panel" data-i18n-label="shell.game.label" data-overlay hidden>
+          <div class="game-menu-card" role="dialog" aria-modal="true" aria-labelledby="game-menu-title">
+            <span class="menu-eyebrow" data-i18n="shell.game.eyebrow"></span>
+            <h2 id="game-menu-title" data-i18n="shell.game.title"></h2>
+            <div class="game-menu-actions">
+              <button id="resume-game" type="button" data-i18n="shell.game.resume"></button>
+              <button id="save-game" type="button" data-i18n="shell.game.save"></button>
+              <button id="show-hotspots" type="button" aria-pressed="false"></button>
+              <button id="show-hint" type="button" data-i18n="shell.game.hint"></button>
+              <button id="open-journal" type="button" data-i18n="shell.game.journal"></button>
+              <button id="game-settings" type="button" data-i18n="shell.game.settings"></button>
+              <button id="return-menu" type="button" data-i18n="shell.game.returnToMenu"></button>
+            </div>
+            <p id="hint-text" class="hint-text" aria-live="polite"></p>
+            <p id="system-feedback" role="status" aria-live="polite"></p>
+          </div>
+        </section>
       </div>
+
+      <section id="journal-panel" class="settings-panel" data-i18n-label="shell.journal.title" data-overlay hidden>
+        <div class="settings-card journal-card" role="dialog" aria-modal="true" aria-labelledby="journal-title">
+          <h2 id="journal-title" data-i18n="shell.journal.title"></h2>
+          <p class="menu-eyebrow" data-i18n="shell.journal.objectiveHeading"></p>
+          <p id="journal-objective" class="journal-objective"></p>
+          <p class="menu-eyebrow" data-i18n="shell.journal.cluesHeading"></p>
+          <ul id="journal-clues" class="journal-clues"></ul>
+          <button id="journal-close" type="button" class="journal-close" data-i18n="shell.journal.close"></button>
+        </div>
+      </section>
+
+      <section id="settings-panel" class="settings-panel" data-i18n-label="shell.settings.label" data-overlay hidden>
+        <div class="settings-card" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+          <span class="menu-eyebrow" data-i18n="shell.settings.eyebrow"></span>
+          <h2 id="settings-title" data-i18n="shell.settings.title"></h2>
+          <div class="settings-grid">
+            <label class="settings-row" for="settings-volume-voice">
+              <span data-i18n="shell.settings.volumeVoice"></span><output id="settings-volume-voice-value">100%</output>
+              <input id="settings-volume-voice" type="range" min="0" max="100" step="5" value="100" />
+            </label>
+            <label class="settings-row" for="settings-volume-ambience">
+              <span data-i18n="shell.settings.volumeAmbience"></span><output id="settings-volume-ambience-value">80%</output>
+              <input id="settings-volume-ambience" type="range" min="0" max="100" step="5" value="80" />
+            </label>
+            <label class="settings-row" for="settings-volume-music">
+              <span data-i18n="shell.settings.volumeMusic"></span><output id="settings-volume-music-value">75%</output>
+              <input id="settings-volume-music" type="range" min="0" max="100" step="5" value="75" />
+            </label>
+            <label class="settings-row" for="settings-volume-sfx">
+              <span data-i18n="shell.settings.volumeSfx"></span><output id="settings-volume-sfx-value">90%</output>
+              <input id="settings-volume-sfx" type="range" min="0" max="100" step="5" value="90" />
+            </label>
+            <label class="settings-select-row" for="settings-audio-language">
+              <span data-i18n="shell.settings.audioLanguage"></span>
+              <select id="settings-audio-language"></select>
+            </label>
+            <label class="settings-select-row" for="settings-text-language">
+              <span data-i18n="shell.settings.textLanguage"></span>
+              <select id="settings-text-language"></select>
+            </label>
+            <label class="settings-select-row" for="settings-auto-narration">
+              <span data-i18n="shell.settings.autoNarration"></span>
+              <input id="settings-auto-narration" class="settings-toggle" type="checkbox" />
+            </label>
+          </div>
+          <button id="settings-close" type="button" data-i18n="shell.settings.back"></button>
+        </div>
+      </section>
     </main>
   </body>
 </html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="540" viewBox="0 0 1560 540">
+  <!-- Foreground layer of the vestibule: a potted palm close to the camera; the player walks behind it. -->
+  <g>
+    <path d="M300 482c-30-40-70-60-118-66M300 482c-18-48-48-86-92-110M300 482c-2-56-14-100-40-132M300 482c12-54 34-96 70-124M300 482c26-42 62-66 112-76M300 482c30-26 70-34 116-30" fill="none" stroke="#1f3a24" stroke-width="16" stroke-linecap="round"/>
+    <path d="M300 482c-30-40-70-60-118-66M300 482c-18-48-48-86-92-110M300 482c-2-56-14-100-40-132M300 482c12-54 34-96 70-124M300 482c26-42 62-66 112-76M300 482c30-26 70-34 116-30" fill="none" stroke="#3f6b3a" stroke-width="7" stroke-linecap="round"/>
+    <path d="M252 480h96l-12 60h-72z" fill="#5a3a26" stroke="#2a1b12" stroke-width="5"/>
+    <path d="M248 476h104v12H248z" fill="#6e4a30" stroke="#2a1b12" stroke-width="4"/>
+  </g>
+</svg>
