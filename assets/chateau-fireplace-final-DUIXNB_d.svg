@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="320" viewBox="0 0 250 320">
+  <defs>
+    <linearGradient id="fp-stone" x1="0" y1="0" x2="1" y2=".2">
+      <stop offset="0" stop-color="#8b7869"/>
+      <stop offset=".55" stop-color="#74645a"/>
+      <stop offset="1" stop-color="#5f5149"/>
+    </linearGradient>
+    <radialGradient id="fp-ember" cx=".5" cy=".85" r=".55">
+      <stop offset="0" stop-color="#c87a44" stop-opacity=".58"/>
+      <stop offset=".4" stop-color="#8f4b34" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#2b2322" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path d="M22 28H228L217 73H33Z" fill="url(#fp-stone)" stroke="#322a27" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M42 72H208V292H42Z" fill="#62544b" stroke="#332b28" stroke-width="7"/>
+  <path d="M71 106H179V286H71Z" fill="#211d1d" stroke="#3c302b" stroke-width="7"/>
+  <path d="M71 106q54-54 108 0" fill="#51453f" stroke="#332b28" stroke-width="7"/>
+  <path d="M58 292H192L213 313H37Z" fill="#5f5149" stroke="#2d2725" stroke-width="6" stroke-linejoin="round"/>
+  <ellipse cx="125" cy="244" rx="51" ry="55" fill="url(#fp-ember)"/>
+  <path d="M94 260q29-18 60 2M102 271q23-11 45 2" fill="none" stroke="#b8643f" stroke-width="5" opacity=".55"/>
+  <path d="M81 91H169M53 55H198" stroke="#a58b6d" stroke-width="3" opacity=".28"/>
+</svg>
